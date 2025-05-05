@@ -1,0 +1,6 @@
+cd ~
+cd /home/digee/binman
+docker build -t binman .
+docker stop binman
+docker rm binman
+docker run -d --restart unless-stopped -p 9080:80 --name binman binman 

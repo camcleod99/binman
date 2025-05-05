@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bins Collection</title>
+</head>
+<body>
+  <div>
+    <img src="./bins.png" alt="Bin Collection Image" />
+  </div>
+
+  <div id="last-update">Loading...</div>
+
+  <script>
+  fetch('/last_update.txt')
+    .then(response => response.text())
+    .then(text => {
+      document.getElementById('last-update').innerText = "Last updated: " + text;
+    })
+    .catch(error => {
+      document.getElementById('last-update').innerText = "Update time not available.";
+    });
+  </script>
+
+</body>
+</html>
