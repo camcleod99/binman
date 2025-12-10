@@ -6,7 +6,11 @@ RUN apt-get update && apt-get install -y \
   imagemagick \
   nginx \
   curl \
+  tzdata \
   && apt-get clean
+
+# Set timezone (adjust as needed)
+ENV TZ=Europe/London
   
 # Copy your files
 COPY binman.sh /binman.sh
